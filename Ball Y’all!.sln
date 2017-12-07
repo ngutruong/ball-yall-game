@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ball Y’all!.Plugins", "Ball Y’all!.Plugins.csproj", "{FD7059F7-1A87-2735-B6D9-AB8771DEC8B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ball Y’all!", "Ball Y’all!.csproj", "{D33FFEC5-8E3A-0187-1729-97120DC78AD7}"
