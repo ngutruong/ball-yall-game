@@ -241,9 +241,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Combat.cs" />
-    <Compile Include="Assets\Script\ControllCamera.cs" />
-    <Compile Include="Assets\Script\FollowPLayer.cs" />
     <Compile Include="Assets\Script\HealthBar.cs" />
+    <Compile Include="Assets\Script\PlayerControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

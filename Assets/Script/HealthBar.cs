@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthBar : MonoBehaviour
-{
+public class HealthBar : MonoBehaviour {
+
     GUIStyle healthStyle;
     GUIStyle backStyle;
     Combat combat;
@@ -24,12 +24,16 @@ public class HealthBar : MonoBehaviour
         // draw health bar background
         GUI.color = Color.grey;
         GUI.backgroundColor = Color.grey;
-        GUI.Box(new Rect(pos.x - 26, Screen.height - pos.y + 20, Combat.maxHealth / 2, 7), ".", backStyle);
+        GUI.Box(new Rect(pos.x - 26, Screen.height - pos.y + -70, Combat.maxHealth / 2, 7), ".", backStyle);
 
         // draw health bar amount
         GUI.color = Color.green;
         GUI.backgroundColor = Color.green;
-        GUI.Box(new Rect(pos.x - 25, Screen.height - pos.y + 21, combat.health / 2, 5), ".", healthStyle);
+        GUI.Box(new Rect(pos.x - 25, Screen.height - pos.y + -71, combat.health / 2, 5), ".", healthStyle);
+
+        GUI.color = Color.green;
+        GUI.backgroundColor = Color.black;
+        GUI.TextArea(new Rect(pos.x - 25, Screen.height - pos.y + -101, combat.playerName.Length*10, 25), combat.playerName, 200);
     }
 
     void InitStyles()

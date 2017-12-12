@@ -6,6 +6,7 @@ public class Combat : MonoBehaviour {
 
     public const int maxHealth = 100;
     public int health = maxHealth;
+    public string playerName= "Vito";
 
     public void TakeDamage(int amount)
     {
