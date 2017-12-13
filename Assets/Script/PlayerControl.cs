@@ -23,10 +23,18 @@ public class PlayerControl : MonoBehaviour {
     private float mouseX = 0.0f;
     private float mouseY = 0.0f;
 
+    [SerializeField]
+    private GameObject spikesObject;
+    [SerializeField]
+    private GameObject playerObject;
+
+    private MeshRenderer currentMesh;
+
     void Start()
     {
         offset = gameObject.transform.position - followMe.transform.position;
         rigidbody = GetComponent<Rigidbody>();
+        currentMesh = GetComponent<MeshRenderer>();
     }
 	
 	void FixedUpdate() {
@@ -51,5 +59,37 @@ public class PlayerControl : MonoBehaviour {
         camera.transform.position = gameObject.transform.position + rotation * dir;
 
         camera.transform.LookAt(gameObject.transform.position);
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        switch (other.tag)
+        {
+            case "Spikes":
+                SpikeCollide();
+                break;
+            case "Health":
+                HealthCollide();
+                break;
+            case "Coin":
+                CoinCollide();
+                break;
+        }
+       
+
+        Destroy(other.gameObject);
+    }
+    void SpikeCollide()
+    {
+        Debug.Log("Spike Collide");
+        spikesObject.SetActive(true);
+        playerObject.SetActive(false);
+    }
+    void CoinCollide()
+    {
+        Debug.Log("Coin Collide");
+    }
+    void HealthCollide()
+    {
+        Debug.Log("Health Collide");
     }
 }
