@@ -78,7 +78,10 @@ public class PlayerControl : MonoBehaviour {
         float moveVertical = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rigidbody.AddForce(movement * speed);
+        Vector3 dir = camera.transform.TransformDirection(movement);
+        dir.Set(dir.x,0,dir.z);
+        dir = dir.normalized * movement.magnitude;
+        rigidbody.AddForce(dir * speed);
         followMe.transform.position = gameObject.transform.position;
 
         mouseX += Input.GetAxis("Mouse X");
