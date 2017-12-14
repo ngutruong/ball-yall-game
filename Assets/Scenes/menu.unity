@@ -210,7 +210,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 106315740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.300003, y: 55.4, z: 0}
+  m_LocalPosition: {x: 11.900002, y: 71.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1242334322}
@@ -218,7 +218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -23.3, y: 55.4}
+  m_AnchoredPosition: {x: 11.9, y: 71.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &106315742
@@ -251,11 +251,37 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
+<<<<<<< HEAD
     m_VerticalOverflow: 0
     m_LineSpacing: 14
   m_Text: "BALL Y\u2019ALL v1.0.0\n\nCREDITS:\nAlexander Logvinenko\nBrandon Moore\nTruong
     Nguyen\nVitaliy Shahanyants\n\nSOUND DESIGN:\nTruong Nguyen\n\nCHARACTER ASSETS:\nVitaliy
     Shahanyants\n\nBallYall.com"
+=======
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'BALL Y''ALL v 1.0.0
+
+    CREDITS:
+
+    Alexander Logvinenko
+
+    Brandon Moore
+
+    Truong Nguyen
+
+    Vitaliy Shahanyants
+
+
+    SOUND DESIGN:
+
+    Truong Nguyen
+
+
+    CHARACTER ASSETS:
+
+    Vitaliy Shahanyants'
+>>>>>>> 14fe0ad609da9b5bff69d2b7d0efff6680914318
 --- !u!222 &106315743
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1814,7 +1840,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 468988127}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 392, y: 156.5, z: 0}
+=======
+  m_LocalPosition: {x: 511.5, y: 156.5, z: 0}
+>>>>>>> 14fe0ad609da9b5bff69d2b7d0efff6680914318
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 193741378}
@@ -2085,7 +2115,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 634818796}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.300003, y: -86.7, z: 0}
+  m_LocalPosition: {x: -0.80000305, y: -138.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1719526746}
@@ -2094,7 +2124,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.3, y: -86.7}
+  m_AnchoredPosition: {x: -0.8, y: -138.1}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &634818798
@@ -3418,7 +3448,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1242334321}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 511.5, y: 156.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 958702069}
