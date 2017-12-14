@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour {
 
@@ -28,16 +29,51 @@ public class PlayerControl : MonoBehaviour {
     [SerializeField]
     private GameObject playerObject;
 
+    [SerializeField]
+    private float spikeStartTimer = 10f;
+
+    private float spikeCountDown;
+    [SerializeField]
+    private bool isSpikeCollected = false;
+
+    [SerializeField]
+    private float generalTime;
+
+    private int points = 0;
+
+    [SerializeField]
+    private Text pointsText;
+    [SerializeField]
+    private Text spikeTimerText;
+    [SerializeField]
+    private Text timerText;
+
+    [SerializeField]
+    private GameObject gameOverMenu;
+
     private MeshRenderer currentMesh;
+
+    private Combat combat = null;
 
     void Start()
     {
         offset = gameObject.transform.position - followMe.transform.position;
         rigidbody = GetComponent<Rigidbody>();
         currentMesh = GetComponent<MeshRenderer>();
+        generalTime = Time.time;
+        spikeCountDown = spikeStartTimer;
+        combat = GetComponent<Combat>();
     }
-	
-	void FixedUpdate() {
+    void Update()
+    {
+        generalTime = Time.time - generalTime;
+        if(combat.health <= 0)
+        {
+            Destroy(gameObject);
+            gameOverMenu.SetActive(true);
+        }
+    }
+    void FixedUpdate() {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
@@ -59,37 +95,70 @@ public class PlayerControl : MonoBehaviour {
         camera.transform.position = gameObject.transform.position + rotation * dir;
 
         camera.transform.LookAt(gameObject.transform.position);
+
+
+        timerText.text = "Time: " + (int)generalTime;
+        if (isSpikeCollected)
+        {
+            if((generalTime % 10) >= spikeStartTimer-1)
+            {
+                spikeTimerText.gameObject.SetActive(false);
+                playerObject.SetActive(true);
+                spikeTimerText.gameObject.SetActive(false);
+            }
+            else
+            {
+                spikeCountDown = (generalTime % 10);
+                spikeTimerText.text = "Spikes Timer: " + (int)spikeCountDown;
+            }
+        }
     }
     void OnTriggerEnter(Collider other)
     {
+        
         switch (other.tag)
         {
             case "Spikes":
-                SpikeCollide();
+                SpikeCollide(other);
                 break;
             case "Health":
-                HealthCollide();
+                HealthCollide(other);
                 break;
             case "Coin":
-                CoinCollide();
+                CoinCollide(other);
+                break;
+            case "DeathZone":
+                DeathZoneCollide(other);
                 break;
         }
-       
+        
 
-        Destroy(other.gameObject);
     }
-    void SpikeCollide()
+    void SpikeCollide(Collider other)
     {
+        Destroy(other.gameObject);
         Debug.Log("Spike Collide");
         spikesObject.SetActive(true);
         playerObject.SetActive(false);
+        spikeTimerText.gameObject.SetActive(true);
+        isSpikeCollected = true;
     }
-    void CoinCollide()
+    void CoinCollide(Collider other)
     {
+        Destroy(other.gameObject);
         Debug.Log("Coin Collide");
+        points++;
+        pointsText.text = "Points: " + points;
     }
-    void HealthCollide()
+    void HealthCollide(Collider other)
     {
+        Destroy(other.gameObject);
         Debug.Log("Health Collide");
+        combat.AddHealth();
+    }
+    void DeathZoneCollide(Collider other)
+    {
+        Destroy(gameObject);
+        gameOverMenu.SetActive(true);
     }
 }

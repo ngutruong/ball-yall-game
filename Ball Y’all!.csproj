@@ -241,10 +241,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Combat.cs" />
+    <Compile Include="Assets\Script\EnemyControls.cs" />
+    <Compile Include="Assets\Script\EnemyHurtPlayer.cs" />
     <Compile Include="Assets\Script\HealthBar.cs" />
     <Compile Include="Assets\Script\PlayerControl.cs" />
     <Compile Include="Assets\Script\RotateObject.cs" />
     <Compile Include="Assets\Script\UIController.cs" />
+    <Compile Include="Assets\Script\UIEndGameController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
