@@ -8,6 +8,10 @@ public class PlayerControl : MonoBehaviour {
     private const float Y_ANGLE_MIN = -0.1f;
     private const float Y_ANGLE_MAX = 50.0f;
 
+
+    public VirtualJoyStick joystick;
+
+
     [SerializeField]
     private float speed;
 
@@ -38,8 +42,8 @@ public class PlayerControl : MonoBehaviour {
     }
 	
 	void FixedUpdate() {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        float moveHorizontal = joystick.Horizontal();
+        float moveVertical = joystick.Vertical();
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rigidbody.AddForce(movement * speed);
