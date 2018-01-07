@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class PlayerControl : MonoBehaviour {
 
@@ -30,14 +32,14 @@ public class PlayerControl : MonoBehaviour {
     private GameObject playerObject;
 
     [SerializeField]
-    private float spikeStartTimer = 10f;
+    private int spikeStartTimer = 10;
 
     private float spikeCountDown;
     [SerializeField]
-    private bool isSpikeCollected = false;
+    public bool isSpikeCollected = false;
 
     [SerializeField]
-    private float generalTime;
+    private int generalTime = 0;
 
     private int points = 0;
 
@@ -57,19 +59,45 @@ public class PlayerControl : MonoBehaviour {
 
     void Start()
     {
+        ParseColor();
+
         offset = gameObject.transform.position - followMe.transform.position;
         rigidbody = GetComponent<Rigidbody>();
         currentMesh = GetComponent<MeshRenderer>();
-        generalTime = Time.time;
-        spikeCountDown = spikeStartTimer;
+        //generalTime = (int)Time.time;
         combat = GetComponent<Combat>();
+        StartCoroutine("TimerCountUp");
+    }
+    void ParseColor()
+    {
+        string colorString = PlayerPrefs.GetString("color");
+
+        var start = colorString.IndexOf("(");
+        var length = colorString.IndexOf(")") - start - 2;
+        var s = colorString.Substring(start + 1, length);
+
+        string [] nums = s.Split(","[0]);
+
+        float _red;
+        float _green;
+        float _blue;
+        float _a;
+
+        float.TryParse(nums[0], out _red);
+        float.TryParse(nums[1], out _green);
+        float.TryParse(nums[2], out _blue);
+        float.TryParse(nums[3],out  _a);
+
+        Debug.Log(_red + "," + _green + "," + _blue + "," + _a);
+        playerObject.gameObject.GetComponent<Renderer>().material.color = new Color(_red, _green, _blue, _a);
     }
     void Update()
     {
-        generalTime = Time.time - generalTime;
+        //generalTime = (int)Time.time - generalTime;
         if(combat.health <= 0)
         {
-            Destroy(gameObject);
+            StopCoroutine("TimerCountUp");
+            Destroy(gameObject); 
             gameOverMenu.SetActive(true);
         }
     }
@@ -103,17 +131,35 @@ public class PlayerControl : MonoBehaviour {
         timerText.text = "Time: " + (int)generalTime;
         if (isSpikeCollected)
         {
-            if((generalTime % 10) >= spikeStartTimer-1)
+            if(spikeStartTimer <= 0)
             {
                 spikeTimerText.gameObject.SetActive(false);
                 playerObject.SetActive(true);
                 spikeTimerText.gameObject.SetActive(false);
+                isSpikeCollected = false;
+                spikeStartTimer = 10;
+                StopCoroutine("SpikeCountDown");
             }
             else
-            {
-                spikeCountDown = (generalTime % 10);
-                spikeTimerText.text = "Spikes Timer: " + (int)spikeCountDown;
+            {   
+                spikeTimerText.text = "Spikes Timer: " + (int)spikeStartTimer;
             }
+        }
+    }
+    IEnumerator SpikeCountDown()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            spikeStartTimer -=1;
+        }
+    }
+    IEnumerator TimerCountUp()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            generalTime+=1;
         }
     }
     void OnTriggerEnter(Collider other)
@@ -145,6 +191,7 @@ public class PlayerControl : MonoBehaviour {
         playerObject.SetActive(false);
         spikeTimerText.gameObject.SetActive(true);
         isSpikeCollected = true;
+        StartCoroutine("SpikeCountDown");
     }
     void CoinCollide(Collider other)
     {
@@ -163,5 +210,9 @@ public class PlayerControl : MonoBehaviour {
     {
         Destroy(gameObject);
         gameOverMenu.SetActive(true);
+    }
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("menu", LoadSceneMode.Single);
     }
 }

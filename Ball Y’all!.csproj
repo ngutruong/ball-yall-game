@@ -240,22 +240,58 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ColorPicker\CameraBgColor.cs" />
+    <Compile Include="Assets\ColorPicker\ColorPicker.cs" />
+    <Compile Include="Assets\ColorPicker\DemoGUI_ColorPickerDemo.cs" />
+    <Compile Include="Assets\ColorPicker\DrawGUIOrderColorPicker.cs" />
+    <Compile Include="Assets\ColorPicker\ObjectColor.cs" />
+    <Compile Include="Assets\ColorPicker\PSColor.cs" />
+    <Compile Include="Assets\Lobby\Scripts\DraggablePanel.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyCountdownPanel.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyHook.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyInfoPanel.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyMainMenu.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyManager.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyPlayer.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyPlayerList.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyServerEntry.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyServerList.cs" />
+    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyTopPanel.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\NetworkAsteroid.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\NetworkGameManager.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\NetworkLobbyHook.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\NetworkSpaceship.cs" />
+    <Compile Include="Assets\SampleScenes\Scripts\NetworkSpaceshipBullet.cs" />
     <Compile Include="Assets\Script\Combat.cs" />
     <Compile Include="Assets\Script\EnemyControls.cs" />
     <Compile Include="Assets\Script\EnemyHurtPlayer.cs" />
     <Compile Include="Assets\Script\HealthBar.cs" />
     <Compile Include="Assets\Script\PlayerControl.cs" />
+    <Compile Include="Assets\Script\PlayerControlNetwork.cs" />
     <Compile Include="Assets\Script\RotateObject.cs" />
     <Compile Include="Assets\Script\UIController.cs" />
     <Compile Include="Assets\Script\UIEndGameController.cs" />
+    <Compile Include="Assets\Scripts\ColorHuePicker.cs" />
+    <Compile Include="Assets\Scripts\ColorIndicator.cs" />
+    <Compile Include="Assets\Scripts\ColorSaturationBrightnessPicker.cs" />
+    <Compile Include="Assets\Scripts\Draggable.cs" />
+    <Compile Include="Assets\Scripts\ExampleColorReceiver.cs" />
+    <Compile Include="Assets\Scripts\HSBColor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\ColorPicker\license.txt" />
+    <None Include="Assets\Lobby\Documentation.txt" />
+    <None Include="Assets\Lobby\Instruction.txt" />
+    <None Include="Assets\Shaders\ColorHue.shader" />
+    <None Include="Assets\Shaders\ColorSaturationBrightness.shader" />
+    <None Include="Assets\Shaders\SolidColor.shader" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
+    <None Include="Assets\readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

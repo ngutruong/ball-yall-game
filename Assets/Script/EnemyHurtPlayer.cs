@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyHurtPlayer : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -17,7 +17,13 @@ public class EnemyHurtPlayer : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Combat>().TakeDamage(10);
+            if(collision.gameObject.GetComponent<PlayerControl>().isSpikeCollected == false)
+            {
+                collision.gameObject.GetComponent<Combat>().TakeDamage(10);
+            }
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.Reflect(Vector3.back,
+                                      collision.contacts[0].normal) * 10,
+                       ForceMode.Impulse);
         }
         
     }
