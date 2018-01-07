@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 135499070559387838}
   m_Layer: 0
   m_Name: PlayerObject
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 4667655762407458}
   - component: {fileID: 33357334379642508}
   - component: {fileID: 23879290034845216}
-  - component: {fileID: 114710254774150464}
   - component: {fileID: 135131983715488214}
   m_Layer: 0
   m_Name: Spikes
@@ -235,6 +234,13 @@ MonoBehaviour:
   camera: {fileID: 0}
   spikesObject: {fileID: 1310087525173612}
   playerObject: {fileID: 1984216857248582}
+  spikeStartTimer: 10
+  isSpikeCollected: 0
+  generalTime: 0
+  pointsText: {fileID: 0}
+  spikeTimerText: {fileID: 0}
+  timerText: {fileID: 0}
+  gameOverMenu: {fileID: 0}
 --- !u!114 &114596333667734010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -246,18 +252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bad6c30eff3fee4b8bc4ad5115b629a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114710254774150464
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1310087525173612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b45fc462b879aae4b9c838ef5b8ac996, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 100
 --- !u!135 &135131983715488214
 SphereCollider:
   m_ObjectHideFlags: 1

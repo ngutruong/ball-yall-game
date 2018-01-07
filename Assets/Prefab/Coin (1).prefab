@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114868350629168830}
   m_Layer: 0
   m_Name: Coin (1)
-  m_TagString: Health
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1838345951069190}
   m_LocalRotation: {x: -0.64461046, y: -0.29064998, z: -0.29064992, w: 0.64461046}
-  m_LocalPosition: {x: -4.48, y: 4.7, z: -11.03}
+  m_LocalPosition: {x: 3.21, y: 3.991, z: -2.33}
   m_LocalScale: {x: 0.5313014, y: 0.01165307, z: 0.44141743}
   m_Children: []
   m_Father: {fileID: 0}
@@ -103,7 +103,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1838345951069190}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2

@@ -12,8 +12,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Campaign.unity
     guid: 07b16c7e85865c24f83438cc5d615671
   - enabled: 1
-    path: Assets/Scenes/Lobby.unity
-    guid: daa4f8fd72050fe4fbe307daa2bc5a17
-  - enabled: 1
-    path: Assets/Scenes/inGame.unity
-    guid: f1e98716fb5ce2b429cdda88c1665dc0
+    path: Assets/Scenes/Multiplayer.unity
+    guid: 19cd546d7d90f414594c519c97992dce
