@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4964250075963862}
   - component: {fileID: 114295585313434596}
   - component: {fileID: 114717171902144950}
-  - component: {fileID: 114048844630238874}
+  - component: {fileID: 114278465629884256}
+  - component: {fileID: 114642942702415334}
   - component: {fileID: 54329863728227630}
   - component: {fileID: 135642732656271492}
   - component: {fileID: 114127189659672316}
@@ -102,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1403993479109590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41934755, y: 5.269155, z: -6.6768074}
+  m_LocalPosition: {x: 0.41934755, y: 25.22, z: -6.6768074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4526251322570492}
@@ -207,29 +208,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114048844630238874
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1403993479109590}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b198b43906cf705458cd27eea984875a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  followMe: {fileID: 0}
-  camera: {fileID: 0}
-  spikesObject: {fileID: 1485781187477126}
-  playerObject: {fileID: 1679276350330992}
-  spikeStartTimer: 10
-  isSpikeCollected: 0
-  generalTime: 0
-  pointsText: {fileID: 0}
-  spikeTimerText: {fileID: 0}
-  timerText: {fileID: 0}
-  gameOverMenu: {fileID: 0}
 --- !u!114 &114127189659672316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -261,14 +239,32 @@ MonoBehaviour:
     i14: 128
     i15: 60
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &114278465629884256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403993479109590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7faf160874d484090ad451baf84f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  followMe: {fileID: 1612551981500878, guid: b4584efed6fb48c4bbb49f3b5511a51b, type: 2}
+  camera: {fileID: 1744878053847342, guid: b4584efed6fb48c4bbb49f3b5511a51b, type: 2}
+  spikesObject: {fileID: 1679276350330992}
+  playerObject: {fileID: 1485781187477126}
+  spikeStartTimer: 10
+  isSpikeCollected: 0
 --- !u!114 &114295585313434596
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1403993479109590}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53999b69d5eca984088ea460711c48bb, type: 3}
   m_Name: 
@@ -287,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 3
+  m_TransformSyncMode: 1
   m_SendInterval: 0.1
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
@@ -297,13 +293,24 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114642942702415334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403993479109590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4619a148b90ed9a4ab957f80204ac5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114717171902144950
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1403993479109590}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bad6c30eff3fee4b8bc4ad5115b629a, type: 3}
   m_Name: 

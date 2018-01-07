@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Combat : MonoBehaviour {
+public class Combat : NetworkBehaviour {
     [SerializeField]
     private GameObject gameOverMenu;
     public const int maxHealth = 100;
+    [SyncVar]
     public int health = maxHealth;
-    public string playerName= "Vito";
+    [SyncVar]
+    public string playerName= "PlayerName";
     void Start()
     {
         playerName = PlayerPrefs.GetString("playerName");
@@ -29,6 +32,15 @@ public class Combat : MonoBehaviour {
         if (health <= 100)
         {
             health += 10;
+        }
+    }
+    [ClientRpc]
+    void RpcRespawn()
+    {
+        if (isLocalPlayer)
+        {
+            // move back to zero location
+            transform.position = Vector3.zero;
         }
     }
 }

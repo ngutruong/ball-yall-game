@@ -11,6 +11,8 @@ public class PlayerControl : MonoBehaviour {
     private const float Y_ANGLE_MIN = -0.1f;
     private const float Y_ANGLE_MAX = 50.0f;
 
+    
+
     [SerializeField]
     private float speed;
 
@@ -57,16 +59,27 @@ public class PlayerControl : MonoBehaviour {
 
     private Combat combat = null;
 
+    [SerializeField]
+    private int numOFCoins = 0;
+
+    [SerializeField]
+    public GameObject nextGame;
+    [SerializeField]
+    private Button buttonNextGAme;
+
     void Start()
     {
         ParseColor();
-
+        
         offset = gameObject.transform.position - followMe.transform.position;
         rigidbody = GetComponent<Rigidbody>();
         currentMesh = GetComponent<MeshRenderer>();
         //generalTime = (int)Time.time;
         combat = GetComponent<Combat>();
         StartCoroutine("TimerCountUp");
+        numOFCoins = GameObject.FindGameObjectsWithTag("Coin").Length;
+        Debug.Log(numOFCoins);
+        pointsText.text = "Coins: " + points + "/" + numOFCoins;
     }
     void ParseColor()
     {
@@ -198,8 +211,19 @@ public class PlayerControl : MonoBehaviour {
         Destroy(other.gameObject);
         Debug.Log("Coin Collide");
         points++;
-        pointsText.text = "Points: " + points;
+        pointsText.text = "Coins: " + points +"/"+numOFCoins;
+        if(points >= numOFCoins)
+        {
+            Destroy(gameObject);
+            EndLevelShowResults();
+        }
     }
+    void EndLevelShowResults()
+    {
+        nextGame.SetActive(true);
+        //NextLevePane.SetActive(true);
+    }
+    
     void HealthCollide(Collider other)
     {
         Destroy(other.gameObject);
