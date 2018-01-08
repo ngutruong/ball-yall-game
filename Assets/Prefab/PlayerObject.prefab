@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53999b69d5eca984088ea460711c48bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverMenu: {fileID: 0}
   health: 100
   playerName: Vito
 --- !u!114 &114579955046136262
@@ -229,6 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b198b43906cf705458cd27eea984875a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: Campaign_Easy_3
   speed: 10
   followMe: {fileID: 0}
   camera: {fileID: 0}
@@ -241,6 +243,9 @@ MonoBehaviour:
   spikeTimerText: {fileID: 0}
   timerText: {fileID: 0}
   gameOverMenu: {fileID: 0}
+  numOFCoins: 0
+  resultText: {fileID: 0}
+  nextButton: {fileID: 0}
 --- !u!114 &114596333667734010
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
-
+    [SerializeField]
+    public string nextScene;
     [SerializeField]
     GameObject StartMenuContentUI;
     [SerializeField]
@@ -84,14 +85,19 @@ public class UIController : MonoBehaviour {
 
     public void StartEasyGamePlay()
     {
-        SceneManager.LoadScene("Campaign", LoadSceneMode.Single);
+        SceneManager.LoadScene("Campaign_Easy_1", LoadSceneMode.Single);
     }
     public void StartMediumGamePlay()
     {
-        SceneManager.LoadScene("Campaign", LoadSceneMode.Single);
+        SceneManager.LoadScene("Campaign_Medium_1", LoadSceneMode.Single);
     }
     public void StartHardGamePlay()
     {
-        SceneManager.LoadScene("Campaign", LoadSceneMode.Single);
+        SceneManager.LoadScene("Campaign_Hard_1", LoadSceneMode.Single);
+    }
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
+        Debug.Log("Next Level");
     }
 }

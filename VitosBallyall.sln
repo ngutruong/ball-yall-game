@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitosBallyall", "VitosBallyall.csproj", "{E85234FB-358C-0AB7-741B-873679B5CCAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitosBallyall.Plugins", "VitosBallyall.Plugins.csproj", "{4A9B5595-CB31-830E-1B28-B5CA5C6A691C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitosBallyall.Editor.Plugins", "VitosBallyall.Editor.Plugins.csproj", "{9C2453D9-D792-901F-A5C1-F0C2E00E9342}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E85234FB-358C-0AB7-741B-873679B5CCAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E85234FB-358C-0AB7-741B-873679B5CCAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E85234FB-358C-0AB7-741B-873679B5CCAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E85234FB-358C-0AB7-741B-873679B5CCAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A9B5595-CB31-830E-1B28-B5CA5C6A691C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A9B5595-CB31-830E-1B28-B5CA5C6A691C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A9B5595-CB31-830E-1B28-B5CA5C6A691C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A9B5595-CB31-830E-1B28-B5CA5C6A691C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C2453D9-D792-901F-A5C1-F0C2E00E9342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C2453D9-D792-901F-A5C1-F0C2E00E9342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C2453D9-D792-901F-A5C1-F0C2E00E9342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C2453D9-D792-901F-A5C1-F0C2E00E9342}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

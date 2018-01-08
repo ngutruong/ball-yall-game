@@ -9,8 +9,26 @@ EditorBuildSettings:
     path: Assets/Scenes/menu.unity
     guid: 281a874076324124da35aa386fd92f37
   - enabled: 1
-    path: Assets/Scenes/Campaign.unity
-    guid: 07b16c7e85865c24f83438cc5d615671
+    path: Assets/Scenes/Campaign_Easy_1.unity
+    guid: 400b6d4a41afff940b603bf22b5ade7e
   - enabled: 1
-    path: Assets/Scenes/Multiplayer.unity
-    guid: 19cd546d7d90f414594c519c97992dce
+    path: Assets/Scenes/Campaign_Easy_2.unity
+    guid: a040ad01e3bfe3e4a8b6e2b41a90c0ae
+  - enabled: 1
+    path: Assets/Scenes/Campaign_Easy_3.unity
+    guid: 70ca00b3b2bc37d47b210ce34d60d04a
+  - enabled: 1
+    path: Assets/Scenes/Campaign_Medium_1.unity
+    guid: ff89476ba97f9734590d39fa35b1e098
+  - enabled: 1
+    path: Assets/Scenes/Campaign_Medium_2.unity
+    guid: 03ceb1c6c24128a4ab164a66f15e7196
+  - enabled: 1
+    path: Assets/Scenes/Campaign_Hard_1.unity
+    guid: c28a02f919a29df45887d37038d561bc
+  - enabled: 1
+    path: Assets/Scenes/Campaign_Hard_2.unity
+    guid: cb4ec3a6522272245939b240ea6c6bc3
+  - enabled: 1
+    path: Assets/Scenes/Campaign_Hard_3.unity
+    guid: 3958e0459e8d91644924573be35a9f6d
