@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class HealthBar : MonoBehaviour {
+public class HealthBar : NetworkBehaviour {
 
     GUIStyle healthStyle;
     GUIStyle backStyle;
